@@ -1,34 +1,26 @@
-# dragging-sort-block
-Vue2 组件，支持拖拽排序
+<template>
+  <div id="app">
+    <div>
+      <outside-drag-block
+        v-for="item in outsideDragBlockList"
+        :key="item"
+        :text="item"
+        :disabled="isOutsideDragBlockDisabled(item)"
+        :target-area-name="areaName"
+      />
+    </div>
+    <drag-target-area
+      :init-area-height="32"
+      :area-block-list.sync="areaBlockList"
+      :area-name="areaName"
+    />
+  </div>
+</template>
 
-## 本地运行
-`npm install`
+<script>
 
-`npm run serve`
-
-## 组件安装
-`npm install @orange_cat/dragging-sort-block`
-
-## 组件使用
-```html
-<div>
-  <outside-drag-block
-    v-for="item in outsideDragBlockList"
-    :key="item"
-    :text="item"
-    :disabled="isOutsideDragBlockDisabled(item)"
-    :target-area-name="areaName"
-  />
-</div>
-<drag-target-area
-  :init-area-height="32"
-  :area-block-list.sync="areaBlockList"
-  :area-name="areaName"
-/>
-```
-
-```js
 export default {
+  name: 'App',
   data () {
     return {
       areaName: 'target',
@@ -72,4 +64,18 @@ export default {
     }
   }
 }
-```
+</script>
+
+<style>
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+#app {
+  display: flex;
+  width: 100vw;
+  padding: 100px 20px 0;
+  box-sizing: border-box;
+}
+</style>

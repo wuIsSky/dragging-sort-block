@@ -1,0 +1,25 @@
+{
+  "name": "@orange_cat/dragging-sort-block",
+  "version": "0.0.3",
+  "description": "Vue2 组件，支持拖拽排序",
+  "author": {
+    "name": "orange_cat"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wuIsSky/dragging-sort-block.git"
+  },
+  "dependencies": {
+    "element-resize-detector": "^1.2.4",
+    "pubsub-js": "^1.9.4",
+    "throttle-debounce": "1.1.0"
+  },
+  "devDependencies": {
+    "vue": "^2.6.14"
+  }
+}
